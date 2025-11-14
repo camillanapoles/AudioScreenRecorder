@@ -93,7 +93,7 @@ class MediaProjectionService : Service() {
                 "audio_only" -> {
                     // Record only audio
                     recordingFile = File(outputDir, "${fileName}_audio.$audioFormat")
-                    audioRecorder = AudioRecorder(recordingFile!!)
+                    audioRecorder = AudioRecorder(this, recordingFile!!)
                     audioRecorder?.start()
                 }
                 "audio_screen" -> {
