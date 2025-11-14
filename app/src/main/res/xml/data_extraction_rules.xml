@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up. -->
+        <!-- Backup user preferences -->
+        <include domain="sharedpref" path="." />
+        <!-- Exclude recordings from cloud backup (they are large media files) -->
+        <exclude domain="file" path="." />
     </cloud-backup>
+    <device-transfer>
+        <!-- Include preferences during device transfer -->
+        <include domain="sharedpref" path="." />
+        <!-- Exclude recordings from device transfer -->
+        <exclude domain="file" path="." />
+    </device-transfer>
 </data-extraction-rules>

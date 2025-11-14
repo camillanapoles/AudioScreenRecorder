@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <full-backup-content>
-    <!-- TODO: Use <include> and <exclude> to control backup content. -->
+    <!-- Backup user preferences -->
+    <include domain="sharedpref" path="." />
+    <!-- Exclude recordings from backup (they are large media files) -->
+    <exclude domain="file" path="." />
 </full-backup-content>
