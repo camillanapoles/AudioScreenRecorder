@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         if (result.resultCode == RESULT_OK) {
             startRecordingService(result.resultCode, result.data)
         } else {
-            Toast.makeText(this, "Permissão de gravação negada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show()
             resetUI()
         }
     }
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         if (!permissionsHelper.hasAllPermissions()) {
             permissionsHelper.requestAllPermissions { granted ->
                 if (!granted) {
-                    Toast.makeText(this, "Permissões necessárias não concedidas", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.permissions_required, Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUIForRecordingState() {
         recordButton.visibility = View.GONE
         stopButton.visibility = View.VISIBLE
-        statusText.text = "Gravando..."
+        statusText.text = getString(R.string.recording)
         notificationHelper.showRecordingNotification()
     }
     
@@ -173,7 +173,7 @@ class MainActivity : AppCompatActivity() {
         recordButton.visibility = View.VISIBLE
         recordButton.isEnabled = true
         stopButton.visibility = View.GONE
-        statusText.text = "Pronto para gravar"
+        statusText.text = getString(R.string.ready_to_record)
         countdownText.visibility = View.GONE
         notificationHelper.hideRecordingNotification()
     }

@@ -27,10 +27,10 @@ class NotificationHelper(private val context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                "AudioScreenRecorder",
+                context.getString(R.string.notification_channel_name),
                 NotificationManager.IMPORTANCE_DEFAULT
             ).apply {
-                description = "Notifications for AudioScreenRecorder"
+                description = context.getString(R.string.notification_channel_description)
             }
             
             notificationManager.createNotificationChannel(channel)
@@ -49,8 +49,8 @@ class NotificationHelper(private val context: Context) {
         
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_record)
-            .setContentTitle("Gravando")
-            .setContentText("A gravação está em andamento")
+            .setContentTitle(context.getString(R.string.notification_title))
+            .setContentText(context.getString(R.string.notification_text))
             .setContentIntent(pendingIntent)
             .setOngoing(true)
             .build()
