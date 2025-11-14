@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AudioScreenRecorder</string>
+    <string name="start_recording">Iniciar Gravação</string>
+    <string name="stop_recording">Parar Gravação</string>
+    <string name="settings">Configurações</string>
+    <string name="settings_title">Configurações</string>
+    <string name="ready_to_record">Pronto para gravar</string>
+    <string name="recording">Gravando...</string>
+    <string name="recording_saved">Gravação salva</string>
+    <string name="permission_denied">Permissão de gravação negada</string>
+    <string name="permissions_required">Permissões necessárias não concedidas</string>
+    <string name="recording_started">Gravação iniciada</string>
+    <string name="error_starting_recording">Erro ao iniciar gravação</string>
+    <string name="error_stopping_recording">Erro ao parar gravação</string>
+</resources>

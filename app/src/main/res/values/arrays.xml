@@ -1,0 +1,23 @@
+<resources>
+    <string-array name="record_mode_entries">
+        <item>Apenas Áudio</item>
+        <item>Áudio e Tela</item>
+    </string-array>
+
+    <string-array name="record_mode_values">
+        <item>audio_only</item>
+        <item>audio_screen</item>
+    </string-array>
+
+    <string-array name="audio_format_entries">
+        <item>MP4</item>
+        <item>AAC</item>
+        <item>3GP</item>
+    </string-array>
+
+    <string-array name="audio_format_values">
+        <item>mp4</item>
+        <item>aac</item>
+        <item>3gp</item>
+    </string-array>
+</resources>
