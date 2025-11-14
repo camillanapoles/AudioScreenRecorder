@@ -7,10 +7,15 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   # Job 1: Setup and validate environment
   setup:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       cache-hit: ${{ steps.cache-gradle.outputs.cache-hit }}
     
@@ -54,6 +59,8 @@ jobs:
   test:
     needs: setup
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     continue-on-error: true
     
     steps:
@@ -98,6 +105,8 @@ jobs:
   build-debug:
     needs: setup
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Download workspace
@@ -138,6 +147,8 @@ jobs:
   build-release:
     needs: setup
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     
     steps:
