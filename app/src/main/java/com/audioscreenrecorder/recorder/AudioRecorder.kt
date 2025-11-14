@@ -1,11 +1,12 @@
 package com.audioscreenrecorder.recorder
 
+import android.content.Context
 import android.media.MediaRecorder
 import android.os.Build
 import java.io.File
 import java.io.IOException
 
-class AudioRecorder(private val outputFile: File) {
+class AudioRecorder(private val context: Context, private val outputFile: File) {
     
     private var mediaRecorder: MediaRecorder? = null
     private var isRecording = false
@@ -15,7 +16,7 @@ class AudioRecorder(private val outputFile: File) {
         if (isRecording) return
         
         mediaRecorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            MediaRecorder(outputFile.parentFile)
+            MediaRecorder(context)
         } else {
             @Suppress("DEPRECATION")
             MediaRecorder()

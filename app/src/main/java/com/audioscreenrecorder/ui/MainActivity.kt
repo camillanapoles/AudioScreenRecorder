@@ -180,7 +180,9 @@ class MainActivity : AppCompatActivity() {
     
     override fun onDestroy() {
         super.onDestroy()
-        countdownHandler?.removeCallbacks(countdownRunnable!!)
+        countdownRunnable?.let { runnable ->
+            countdownHandler?.removeCallbacks(runnable)
+        }
         
         if (isRecording) {
             stopRecording()
