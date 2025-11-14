@@ -275,7 +275,7 @@ This Android application has been fully implemented based on the specifications 
 
 4. **Internationalization**
    - Moved all hardcoded UI strings to string resources
-   - Ensured complete Portuguese (BR) localization support
+   - Portuguese (BR) strings are present, but proper localization is not yet implemented (strings are currently in the default `values` directory, which forces Portuguese for all users)
    - Improved maintainability and future translation support
 
 5. **Data Management**
