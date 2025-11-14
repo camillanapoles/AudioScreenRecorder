@@ -6,7 +6,7 @@
     <string name="settings_title">Configurações</string>
     <string name="ready_to_record">Pronto para gravar</string>
     <string name="recording">Gravando...</string>
-    <string name="recording_saved">Gravação salva em %1$s</string>
+    <string name="recording_saved">Gravação salva: %1$s</string>
     <string name="permission_denied">Permissão de gravação negada</string>
     <string name="permissions_required">Permissões necessárias não concedidas</string>
     <string name="recording_started">Gravação iniciada</string>

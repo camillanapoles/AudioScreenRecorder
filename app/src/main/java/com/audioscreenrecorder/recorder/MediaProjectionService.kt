@@ -119,7 +119,7 @@ class MediaProjectionService : Service() {
             Toast.makeText(this, R.string.recording_started, Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_starting_recording, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.error_starting_recording, e.message ?: "Unknown error"), Toast.LENGTH_LONG).show()
             stopSelf()
         }
     }
@@ -142,10 +142,10 @@ class MediaProjectionService : Service() {
             mediaProjection?.stop()
             virtualDisplay?.release()
             
-            Toast.makeText(this, getString(R.string.recording_saved, recordingFile?.absolutePath), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.recording_saved, recordingFile?.name ?: "unknown file"), Toast.LENGTH_LONG).show()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_stopping_recording, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.error_stopping_recording, e.message ?: "Unknown error"), Toast.LENGTH_LONG).show()
         } finally {
             isRecording = false
             stopForeground(STOP_FOREGROUND_REMOVE)
